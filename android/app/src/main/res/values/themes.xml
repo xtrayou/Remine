@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme -->
+    <style name="Theme.Remine" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/coral</item>
+        <item name="colorPrimaryVariant">@color/coral_dark</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/teal</item>
+        <item name="colorSecondaryVariant">@color/teal</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="android:statusBarColor">@color/coral</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <!-- Splash Theme -->
+    <style name="Theme.Remine.Splash" parent="Theme.Remine">
+        <item name="android:windowBackground">@drawable/gradient_splash</item>
+        <item name="android:statusBarColor">@color/primary</item>
+    </style>
+
+</resources>

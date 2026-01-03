@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Book - E-Perpustakaan Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Onboarding Screen 1 -->
+    <div class="onboarding-screen active" id="onboarding1">
+        <div class="onboarding-content">
+            <button class="skip-btn" onclick="skipOnboarding()">Skip</button>
+            <div class="illustration">
+                <img src="assets/onboarding1.svg" alt="Books Illustration">
+            </div>
+            <h2>Only Books Can Help You</h2>
+            <p>Books can help you to increase your knowledge and become more successfully.</p>
+            <div class="indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+            <button class="next-btn" onclick="nextOnboarding()">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Onboarding Screen 2 -->
+    <div class="onboarding-screen" id="onboarding2">
+        <div class="onboarding-content">
+            <button class="skip-btn" onclick="skipOnboarding()">Skip</button>
+            <div class="illustration">
+                <img src="assets/onboarding2.svg" alt="Learn Illustration">
+            </div>
+            <h2>Learn Smartly</h2>
+            <p>It's 2025 and it's time to learn every quickly and smartly. All books are arrange in such that you can educate all of them from year laptop or PC.</p>
+            <div class="indicators">
+                <span class="indicator"></span>
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+            </div>
+            <button class="next-btn" onclick="nextOnboarding()">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Onboarding Screen 3 -->
+    <div class="onboarding-screen" id="onboarding3">
+        <div class="onboarding-content">
+            <button class="skip-btn" onclick="skipOnboarding()">Skip</button>
+            <div class="illustration">
+                <div class="books-grid">
+                    <img src="assets/book1.jpg" alt="Book Cover">
+                    <img src="assets/book2.jpg" alt="Book Cover">
+                    <img src="assets/book3.jpg" alt="Book Cover">
+                    <img src="assets/book4.jpg" alt="Book Cover">
+                    <img src="assets/book5.jpg" alt="Book Cover">
+                    <img src="assets/book6.jpg" alt="Book Cover">
+                </div>
+            </div>
+            <h2>Book Has Power To Change Everything</h2>
+            <p>We have to all friends in our life and the books is first. Books has power to change overall mind ideas and thoughts of the people.</p>
+            <button class="get-started-btn" onclick="getStarted()">Get Started Now</button>
+        </div>
+    </div>
+
+    <!-- Main App Container -->
+    <div class="app-container" id="mainApp" style="display: none;">
+        <!-- Header -->
+        <header class="app-header">
+            <button class="back-btn" id="backBtn" style="display: none;">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <div class="logo">
+                <i class="fas fa-book"></i>
+                <span>EASY BOOK</span>
+            </div>
+            <button class="menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </header>
+
+        <!-- Home Screen -->
+        <div class="screen active" id="homeScreen">
+            <!-- Search Bar -->
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search books, authors..." id="searchInput">
+            </div>
+
+            <!-- Book of the Week -->
+            <section class="book-of-week">
+                <div class="section-header">
+                    <h3>Book of the week</h3>
+                </div>
+                <div class="featured-book">
+                    <img src="assets/featured-book.jpg" alt="The Psychology of Money" class="featured-cover">
+                    <div class="featured-info">
+                        <h4>The Psychology of Money</h4>
+                        <p class="author">Morgan Housel</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                        </div>
+                        <button class="read-btn" onclick="openBook(1)">
+                            <span>Read Now</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recommended For You -->
+            <section class="recommended">
+                <h3>Recommended for you</h3>
+                <div class="books-horizontal" id="recommendedBooks">
+                    <!-- Books will be populated by JS -->
+                </div>
+            </section>
+
+            <!-- Popular Books -->
+            <section class="popular-books">
+                <h3>Popular books</h3>
+                <div class="books-list" id="popularBooks">
+                    <!-- Books will be populated by JS -->
+                </div>
+            </section>
+
+            <!-- News Section -->
+            <section class="news-section">
+                <h3>News</h3>
+                <div class="news-horizontal" id="newsSection">
+                    <!-- News will be populated by JS -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Book Detail Screen -->
+        <div class="screen" id="bookDetailScreen">
+            <div class="book-detail-container">
+                <div class="book-detail-header">
+                    <img src="" alt="Book Cover" id="detailBookCover">
+                    <div class="book-detail-info">
+                        <h2 id="detailBookTitle"></h2>
+                        <p class="author" id="detailBookAuthor"></p>
+                        <div class="rating" id="detailBookRating"></div>
+                        <p class="price" id="detailBookPrice"></p>
+                    </div>
+                </div>
+                <div class="book-tabs">
+                    <button class="tab-btn active" onclick="showTab('about')">About The Book</button>
+                    <button class="tab-btn" onclick="showTab('reviews')">Reviews</button>
+                </div>
+                <div class="book-tab-content" id="aboutTab">
+                    <p id="detailBookDescription"></p>
+                </div>
+                <div class="book-tab-content" id="reviewsTab" style="display: none;">
+                    <div class="reviews-list">
+                        <p>No reviews yet.</p>
+                    </div>
+                </div>
+                <button class="read-now-btn" onclick="startReading()">
+                    <span>Read Now</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Reading Screen -->
+        <div class="screen" id="readingScreen">
+            <div class="reading-container">
+                <div class="reading-header">
+                    <h3 id="readingTitle"></h3>
+                    <span class="chapter-info">Chapter 1</span>
+                </div>
+                <div class="reading-content" id="readingContent">
+                    <!-- Content will be loaded here -->
+                </div>
+                <div class="reading-controls">
+                    <button class="control-btn" onclick="previousPage()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <span class="page-info">Page 1 of 10</span>
+                    <button class="control-btn" onclick="nextPage()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" onclick="showScreen('home')">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </button>
+            <button class="nav-item" onclick="showScreen('library')">
+                <i class="fas fa-book-open"></i>
+                <span>Library</span>
+            </button>
+            <button class="nav-item" onclick="showScreen('favorites')">
+                <i class="fas fa-heart"></i>
+                <span>Favorites</span>
+            </button>
+            <button class="nav-item" onclick="showScreen('profile')">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="sideMenu">
+        <div class="menu-header">
+            <div class="user-info">
+                <img src="assets/user-avatar.jpg" alt="User" class="user-avatar">
+                <div>
+                    <h4>Morgan Housel</h4>
+                    <p>morgan@email.com</p>
+                </div>
+            </div>
+            <button class="close-menu" onclick="toggleMenu()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="menu-list">
+            <li><i class="fas fa-home"></i> Home</li>
+            <li><i class="fas fa-book"></i> My Books</li>
+            <li><i class="fas fa-heart"></i> Favorites</li>
+            <li><i class="fas fa-download"></i> Downloads</li>
+            <li><i class="fas fa-cog"></i> Settings</li>
+            <li><i class="fas fa-info-circle"></i> About</li>
+            <li><i class="fas fa-sign-out-alt"></i> Logout</li>
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

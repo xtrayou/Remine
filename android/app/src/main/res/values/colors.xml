@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="coral">#FF7B7B</color>
+    <color name="coral_dark">#FF6B6B</color>
+    <color name="primary">#FF8B8B</color>
+    <color name="secondary">#FFB4B4</color>
+    <color name="accent">#FF6B6B</color>
+    <color name="dark_bg">#1E1E2E</color>
+    <color name="light_bg">#F5F5F5</color>
+    <color name="text_dark">#2C2C2C</color>
+    <color name="text_light">#666666</color>
+    <color name="white">#FFFFFF</color>
+    <color name="teal">#4ECDC4</color>
+    <color name="yellow">#FFD93D</color>
+    <color name="purple">#6C5CE7</color>
+</resources>

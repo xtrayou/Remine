@@ -1,0 +1,9 @@
+<!-- Placeholder SVG for Onboarding 1 -->
+<svg width="280" height="280" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="140" cy="140" r="120" fill="#FFE5E5"/>
+  <rect x="80" y="100" width="40" height="55" rx="4" fill="#FF8B8B"/>
+  <rect x="130" y="90" width="40" height="65" rx="4" fill="#FF6B6B"/>
+  <rect x="180" y="110" width="40" height="55" rx="4" fill="#FFB4B4"/>
+  <circle cx="140" cy="200" r="50" fill="#4ECDC4"/>
+  <path d="M120 200 L130 210 L160 180" stroke="white" stroke-width="4" stroke-linecap="round"/>
+</svg>
