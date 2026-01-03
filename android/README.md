@@ -68,6 +68,7 @@ android/
 ## 🚀 Cara Menjalankan
 
 ### Prerequisite
+
 1. **Android Studio** (versi terbaru)
 2. **JDK 8** atau lebih tinggi
 3. **Android SDK** (API 24 - 34)
@@ -85,6 +86,7 @@ android/
    - Pilih emulator atau device Android
 
 ### Build APK
+
 ```bash
 # Debug APK
 ./gradlew assembleDebug
@@ -98,6 +100,7 @@ APK akan tersimpan di: `app/build/outputs/apk/`
 ## 📸 Screenshot
 
 Aplikasi memiliki tampilan:
+
 1. **Splash Screen** - Logo dengan gradient background
 2. **Onboarding** - 3 slide pengenalan
 3. **Home** - Featured book, recommended, popular
@@ -120,4 +123,5 @@ Aplikasi memiliki tampilan:
 MIT License - Free for personal and commercial use.
 
 ---
+
 Dikembangkan dengan ❤️ untuk pecinta buku
